@@ -1,0 +1,6 @@
+name: aks-pulumi
+runtime:
+  name: python
+  options:
+    virtualenv: venv
+description: A rewrite of iq3-aks in Pulumi
