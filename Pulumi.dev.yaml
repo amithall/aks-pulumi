@@ -1,8 +1,2 @@
 config:
-  aks-pulumi:location: westeurope
-  aks-pulumi:password:
-    secure: AAABAE0vciKk3kW/7CLPFD60J195DWUPpDunK2obXwE6aZ9x1Xzp6/NlVrQ=
-  aks-pulumi:prefix: test
-  aks-pulumi:sshkey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDSoMwIRAonNmfLVIxPKk621yU5B+H0wJtKq44Swu/O6Gos8e1kHwvjFZfaQyW1CjxW1X/25xFc9FHi1WJfi3oko8xGXb+ovS2qwGNVVjz/n/Su00cAMJdYrAt40idxUvZSc4h6vSIu7sIuy/Y8Lec+YwzABVPK+Kvxp43yqI59Ea5ry31d7Fkh83SurMIfkOGk5HAxxBUzF0CyI88/mFfEo8cphrwYNXvJ/AZjIlnj5+kaeF9lsVqjmxmqP8NcNhPSIXbR9D8cJfzLM7MHnVttTTC6MgMIi6iRmFiZe6VfVVCckgfItEHcxkvk+5UggQGuQLPIUfeGk4CfjBfurnRxP1HfG2j+lK+8GTHDu9QPAKJfQF2evEgeEAFBYZtYnWUQ295uHkFTZWGNyQMuDSGy1f4Os5lpni6tCweaJU1t4rhHQNf339Fkag4l5OVJ1XosbWDf2+ZjT1zS/rkE6zIFTyUrsShIJJ5bNYSpQTGRKzNfPeUs8zzBFSvf3F/pXiE=
-    ml@Mikaels-MBP.fritz.box
-  azure-native:location: WestEurope
+  pulumi:template: https://github.com/pulumi/examples/tree/master/azure-ts-aks
