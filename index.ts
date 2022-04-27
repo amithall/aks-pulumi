@@ -13,13 +13,18 @@ import * as resources from "@pulumi/azure-native/resources";
 // Variables
 
 var tenantId = ""
-var objectId = ""
+var requesterEmail = ""
 var keyVaultName = "mlo-kv-01"
 var resourceGroupName = "rg-pulumi-aks"
 var location = "westeurope"
 
 // Create an Azure Resource Group
 const resourceGroup = new resources.ResourceGroup(resourceGroupName);
+
+// Get user objectId
+const user = pulumi.output(azuread.getUser({
+    userPrincipalName: requesterEmail,
+}));
 
 // Create a key vault
 
@@ -29,7 +34,7 @@ const vault = new azure_native.keyvault.Vault("vault", {
     vaultName: keyVaultName,
     properties: {
         accessPolicies: [{
-            objectId: objectId,
+            objectId: user.objectId,
             permissions: {
                 secrets: [
                     "get",
@@ -103,6 +108,7 @@ const clientSecret = new azure_native.keyvault.Secret("clientSecret", {
     vaultName: vault.name,
 });
 
+// Create cluster
 
 const config = new pulumi.Config();
 const managedClusterName = config.get("managedClusterName") || "azure-aks";
